@@ -6,6 +6,7 @@ import 'react-native-reanimated';
 import {ClerkProvider, ClerkLoaded} from '@clerk/clerk-expo';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { tokenCache } from '@/cache';
 
 const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
 if(!publishableKey) {
@@ -23,7 +24,7 @@ export default function RootLayout() {
   }
 
   return (
-    <ClerkProvider publishableKey= {publishableKey} tokenCache={undefined} >
+    <ClerkProvider publishableKey= {publishableKey} tokenCache={tokenCache} >
     <ClerkLoaded>
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Slot/>
