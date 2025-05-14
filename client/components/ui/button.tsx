@@ -1,6 +1,6 @@
 import { appleBlue, zincColors } from "@/constants/Colors";
 import React from "react";
-import { Button, TextStyle, useColorScheme, ViewStyle } from "react-native";
+import { TextStyle, useColorScheme, ViewStyle } from "react-native";
 import { Pressable, StyleSheet, ActivityIndicator } from "react-native";
 import { ThemedText } from "../ThemedText";
 
@@ -38,7 +38,7 @@ export const Button: React.FC<ButtonProps> = ({
         lg: { height: 55, fontSize: 18, padding: 20 },
     };
 
-    const getVariantStyles = (variant: ButtonVariant) => {
+    const getVariantStyle = (variant: ButtonVariant) => {
         const baseStyles : ViewStyle = {
             borderRadius: 12,    
             justifyContent: "center",
