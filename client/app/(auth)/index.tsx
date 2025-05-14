@@ -4,6 +4,8 @@ import { useSignIn } from '@clerk/clerk-expo';
 import {ThemedText} from '@/components/ThemedText';
 import { useRouter, Link } from 'expo-router';
 import { Button } from '@/components/ui/button';
+import TextInput from '@/components/ui/text-input';
+import { BodyScrollView } from '@/components/ui/BodyScrollView';
 
 export default function SignInScreen() {
   const {signIn, setActive, isLoaded} = useSignIn();
@@ -14,11 +16,12 @@ export default function SignInScreen() {
   const [isSigningIn, setIsSigningIn] = React.useState(false);
 
     return (
-      <View>
-        <ThemedText type="title">Sign In</ThemedText>
+      <BodyScrollView>
+       
         <Link href={"/sign-up"}>Go to Sign Up</Link>
+         <TextInput label="hello"/>
         <Button onPress={() => console.log('Button pressed')}>Ram Ram</Button>
-      </View>
+       
+      </BodyScrollView> 
     );
-  
 }   
