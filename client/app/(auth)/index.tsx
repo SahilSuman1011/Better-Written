@@ -16,10 +16,27 @@ export default function SignInScreen() {
   const [isSigningIn, setIsSigningIn] = React.useState(false);
 
     return (
-      <BodyScrollView>
+      <BodyScrollView
+      contentContainerStyle={{
+        paddingHorizontal: 16,
+      }}>
        
-        <Link href={"/sign-up"}>Go to Sign Up</Link>
-         <TextInput label="hello"/>
+         <TextInput 
+         label="Email"
+         placeholder="Enter email"
+         autoCapitalize="none"
+         keyboardType="email-address"
+         onChangeText={setEmailAddress}/>
+
+           <TextInput 
+           value={password}
+         label="Password"
+         placeholder="Enter Password"
+         autoCapitalize="none"
+         secureTextEntry={true}
+         onChangeText={(password) => setPassword(password)}
+         />
+
         <Button onPress={() => console.log('Button pressed')}>Ram Ram</Button>
        
       </BodyScrollView> 
