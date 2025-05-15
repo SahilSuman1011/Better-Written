@@ -8,7 +8,7 @@ export const BodyScrollView = forwardRef<any, ScrollViewProps>((props, ref) => {
       contentInsetAdjustmentBehavior="automatic"
       contentInset={{ bottom: 0 }}
       scrollIndicatorInsets={{ bottom: 0 }}
-      {...props}
+      {...props} // spread the props
       ref={ref}
     />
   );
